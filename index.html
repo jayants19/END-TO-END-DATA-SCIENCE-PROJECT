@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bangalore House Price Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bangalore House Price Predictor 🏠</h2>
+
+        <form method="POST" action="/predict">
+            <label>Total Square Feet:</label><br>
+            <input type="text" name="sqft" required><br>
+
+            <label>Number of Bathrooms:</label><br>
+            <input type="number" name="bath" required><br>
+
+            <label>Number of BHK:</label><br>
+            <input type="number" name="bhk" required><br>
+
+            <label>Select Location:</label><br>
+            <select name="location" required>
+                {% for loc in columns %}
+                    {% if loc.startswith('location_') %}
+                        <option value="{{ loc }}">{{ loc.replace('location_', '') }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select><br><br>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
