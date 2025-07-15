@@ -18,3 +18,12 @@ This is a machine learning web application that predicts the price of a house in
 - Flask (for backend)
 - HTML & CSS (for frontend)
 - Pickle (to save model)
+
+-  Company: CodTech IT Solutions  
+-  Name: Jayant Sirurmath  
+-  Intern ID: CT08DL564  
+-  Domain: Data Science  
+-  Duration: 8 Weeks  
+-  Mentor: Neela Santosh 
+
+
